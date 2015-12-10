@@ -26,14 +26,14 @@ try{
     }
     $i = 1; 
 
-    while(count($response) < 10 && $i < $max_id ){
+    while(count($response) <= 10 && $i < $max_id ){
 	if( !in_array($i,$viewed) && $i!=$id && file_exists('./pictures/'.$i)) $response[]=$i;
 	$i++;
     }
     if($i==$max_id) $response['done']=true;
 
-    echo json_encode($response);
-
+    
+      echo json_encode($response);
   }
 }
 
